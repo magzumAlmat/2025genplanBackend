@@ -239,6 +239,7 @@ const sendVerificationEmail=(req,res)=>{
 //верификация сразу же запускает customer в аккаунт без заполнения данных
 const verifyCode=async(req,res)=>{
 
+  
     const authCode=await AuthCode.findOne(
         {where:{email: req.body.email},
         order:[['valid_till','DESC']] } 
